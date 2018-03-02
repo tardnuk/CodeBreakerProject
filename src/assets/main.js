@@ -5,6 +5,12 @@ function guess()
 {
     let input = document.getElementById('user-guess');
     //add functionality to guess function here
+
+    if (answer.value !== '' && answer.value !== '') {
+        return;
+    }
+
+    setHiddenFields();
 }
 
 function randomIntFromInterval(min, max)
@@ -14,14 +20,15 @@ function randomIntFromInterval(min, max)
 
 function setHiddenFields()
 {
-    answer = randomIntFromInterval(0, 9999);
+    let randomAnswer = randomIntFromInterval(0, 9999);
 
-    answer = answer.toString();
+    randomAnswer = randomAnswer.toString();
 
-    while (answer.length < 4) {
-        answer = '0' + answer;
+    while (randomAnswer.length < 4) {
+        randomAnswer = '0' + randomAnswer;
     }
 
+    answer.value = randomAnswer;
     attempt.value = 0;
 }
 
