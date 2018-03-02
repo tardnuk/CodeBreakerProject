@@ -20,6 +20,11 @@ function guess()
 
     if (getResults(input.value)) {
         setMessage('You Win! :)');
+        return;
+    }
+
+    if (attempt.value >= 10) {
+        setMessage('You Lose! :(');
     }
 }
 
