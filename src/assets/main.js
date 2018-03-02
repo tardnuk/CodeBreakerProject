@@ -1,5 +1,6 @@
 const answer = document.getElementById('answer');
 const attempt = document.getElementById('attempt');
+const message = document.getElementById('message');
 const results = document.getElementById('results');
 const code = document.getElementById('code');
 const guessing = document.getElementById('guessing-div');
@@ -61,8 +62,7 @@ function setHiddenFields()
 
 function setMessage(message)
 {
-    // TODO Build 8 - where is label?
-    //label.innerHTML = message;
+    message.innerHTML = message;
 }
 
 function validateInput(guess)
