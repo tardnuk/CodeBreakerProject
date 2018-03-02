@@ -2,6 +2,8 @@ const answer = document.getElementById('answer');
 const attempt = document.getElementById('attempt');
 const results = document.getElementById('results');
 const code = document.getElementById('code');
+const guessing = document.getElementById('guessing-div');
+const replay = document.getElementById('replay-div');
 
 function guess()
 {
@@ -114,4 +116,10 @@ function showAnswer(winner)
     }
 
     code.classList.add('failure');
+}
+
+function showReplay()
+{
+    guessing.style.display = 'none';
+    replay.style.display = 'block';
 }
