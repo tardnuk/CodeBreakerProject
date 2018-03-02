@@ -1,6 +1,7 @@
 const answer = document.getElementById('answer');
 const attempt = document.getElementById('attempt');
 const results = document.getElementById('results');
+const code = document.getElementById('code');
 
 function guess()
 {
@@ -87,8 +88,10 @@ function getResults(input)
         if (input[i] === answer.value[i]) {
             icon = 'ok';
             correctCount++;
-        } else if (answer.value.indexOf(input[i]) > -1) {
-            icon = 'transfer';
+        } else {
+            if (answer.value.indexOf(input[i]) > -1) {
+                icon = 'transfer';
+            }
         }
 
         output += `<span class="glyphicon glyphicon-${icon}"></span>`;
@@ -99,4 +102,16 @@ function getResults(input)
     results.innerHTML = output;
 
     return correctCount === answer.length;
+}
+
+function showAnswer(winner)
+{
+    code.innerHTML = answer.value;
+
+    if (winner) {
+        code.classList.add('success');
+        return;
+    }
+
+    code.classList.add('failure');
 }
