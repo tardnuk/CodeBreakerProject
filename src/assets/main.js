@@ -32,4 +32,10 @@ function setHiddenFields()
     attempt.value = 0;
 }
 
+function setMessage(message)
+{
+    // TODO Build 8 - where is label?
+    //label.innerHTML = message;
+}
+
 //implement new functions here
