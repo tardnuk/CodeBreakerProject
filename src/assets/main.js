@@ -17,7 +17,7 @@ function guess()
         return false;
     }
 
-    attempt++;
+    attempt.value++;
 }
 
 //implement new functions here
