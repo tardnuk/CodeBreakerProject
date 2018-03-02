@@ -4,6 +4,7 @@ let attempt = document.getElementById('attempt');
 function guess()
 {
     let input = document.getElementById('user-guess');
+
     //add functionality to guess function here
 
     if (answer.value !== '' && answer.value !== '') {
@@ -11,6 +12,12 @@ function guess()
     }
 
     setHiddenFields();
+
+    if (!validateInput(input.value)) {
+        return false;
+    }
+
+    attempt++;
 }
 
 //implement new functions here
