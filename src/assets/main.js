@@ -101,7 +101,7 @@ function getResults(input)
 
     output += '</div></div>';
 
-    results.innerHTML = output;
+    results.innerHTML = results.innerHTML + output;
 
     return correctCount === answer.value.length;
 }
