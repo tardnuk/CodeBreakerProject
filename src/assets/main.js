@@ -60,8 +60,8 @@ function validateInput(guess)
 function getResults(input)
 {
     let output = '';
-
     let icon = 'remove';
+    let correctCount = 0;
 
     output += `<div class="row"><span class="col-md-6">${input}</span><div class="col-md-6">`;
 
@@ -74,6 +74,7 @@ function getResults(input)
 
         if (input[i] === answer.value[i]) {
             icon = 'ok';
+            correctCount++;
         } else if (answer.value.indexOf(input[i]) > -1) {
             icon = 'transfer';
         }
@@ -84,4 +85,6 @@ function getResults(input)
     output += '</div></div>';
 
     results.innerHTML = output;
+
+    return correctCount === answer.length;
 }
