@@ -13,6 +13,8 @@ function guess()
     setHiddenFields();
 }
 
+//implement new functions here
+
 function randomIntFromInterval(min, max)
 {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -38,4 +40,13 @@ function setMessage(message)
     //label.innerHTML = message;
 }
 
-//implement new functions here
+function validateInput(guess)
+{
+    if (guess.length === 4) {
+        return true;
+    }
+
+    setMessage('Guesses must be exactly 4 characters long.');
+
+    return false;
+}
