@@ -60,9 +60,9 @@ function setHiddenFields()
     attempt.value = 0;
 }
 
-function setMessage(message)
+function setMessage(msg)
 {
-    message.innerHTML = message;
+    message.innerHTML = msg;
 }
 
 function validateInput(guess)
