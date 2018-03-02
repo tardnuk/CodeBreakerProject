@@ -7,9 +7,20 @@ function guess()
     //add functionality to guess function here
 }
 
+function randomIntFromInterval(min, max)
+{
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 function setHiddenFields()
 {
-    answer = Math.floor(Math.random() * 10000);
+    answer = randomIntFromInterval(0, 9999);
+
+    answer = answer.toString();
+
+    while (answer.length < 4) {
+        answer = '0' + answer;
+    }
 }
 
 //implement new functions here
