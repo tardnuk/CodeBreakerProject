@@ -7,11 +7,9 @@ function guess()
 
     //add functionality to guess function here
 
-    if (answer.value !== '' && answer.value !== '') {
-        return;
+    if (answer.value === '' || answer.value === '') {
+        setHiddenFields();
     }
-
-    setHiddenFields();
 
     if (!validateInput(input.value)) {
         return false;
