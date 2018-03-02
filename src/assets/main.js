@@ -1,5 +1,6 @@
-let answer = document.getElementById('answer');
-let attempt = document.getElementById('attempt');
+const answer = document.getElementById('answer');
+const attempt = document.getElementById('attempt');
+const results = document.getElementById('results');
 
 function guess()
 {
@@ -54,4 +55,33 @@ function validateInput(guess)
     setMessage('Guesses must be exactly 4 characters long.');
 
     return false;
+}
+
+function getResults(input)
+{
+    let output = '';
+
+    let icon = 'remove';
+
+    output += `<div class="row"><span class="col-md-6">${input}</span><div class="col-md-6">`;
+
+    // correct position - <span class="glyphicon glyphicon-ok"></span>
+    // included, wrong position - <span class="glyphicon glyphicon-transfer"></span>
+    // not in answer - <span class="glyphicon glyphicon-remove"></span>
+
+    for (let i = 0, x = input.length; i < x; i++) {
+        icon = 'remove';
+
+        if (input[i] === answer.value[i]) {
+            icon = 'ok';
+        } else if (answer.value.indexOf(input[i]) > -1) {
+            icon = 'transfer';
+        }
+
+        output += `<span class="glyphicon glyphicon-${icon}"></span>`;
+    }
+
+    output += '</div></div>';
+
+    results.innerHTML = output;
 }
