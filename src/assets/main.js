@@ -8,9 +8,7 @@ const replay = document.getElementById('replay-div');
 
 function guess()
 {
-    let input = document.getElementById('user-guess');
-
-    //add functionality to guess function here
+    const input = document.getElementById('user-guess');
 
     if (answer.value === '' || answer.value === '') {
         setHiddenFields();
@@ -38,8 +36,6 @@ function guess()
 
     setMessage('Incorrect, try again.');
 }
-
-//implement new functions here
 
 function randomIntFromInterval(min, max)
 {
@@ -107,7 +103,7 @@ function getResults(input)
 
     results.innerHTML = output;
 
-    return correctCount === answer.length;
+    return correctCount === answer.value.length;
 }
 
 function showAnswer(winner)
