@@ -17,6 +17,10 @@ function guess()
     }
 
     attempt.value++;
+
+    if (getResults(input.value)) {
+        setMessage('You Win! :)');
+    }
 }
 
 //implement new functions here
